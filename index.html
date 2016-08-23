@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>home</title>
+	<style type="text/css">
+		/* 标签样式初始化 */
+		body{margin:0;padding:0;background:#fff;font-size:14px;font-family:Arial,Helvetica,'STHeiti','Microsoft YaHei','sans-serif'}
+		form,ul,li,p,h1,h2,h3,h4,h5,h6{margin:0;padding:0;}
+		img{border:0;}
+		ul,li{list-style:none;}
+		a{color:#00007F;text-decoration:none;}
+		a:hover{text-decoration:none;}
+		/*自定义样式*/
+		#header_wrap{
+			position: relative;
+			width: 100%;
+			height: 70px;
+			background: black;
+		}
+		/* header 内容区域 */
+		#header{
+			position: relative;
+			width: 1140px;
+			margin: 0 auto;
+		}
+		#header #logo{
+			position: absolute;
+			top: 18px;
+		}
+		/* header导航栏 */
+		#header #nav{
+			height: 70px;
+			margin-left: 350px;
+			float: right;
+		}
+		#nav a{
+			height: 28px;
+			font-size: 16px;
+			color: gray;
+			line-height: 70px;
+			margin: 15px;
+		}
+		#nav a:hover,#nav a:nth-child(1){
+			color: white;
+			padding: 5px 10px;
+			border: 1px solid #999;
+			border-radius: 8px;
+		}
+		/* header 导航栏缩减图片 */
+		#header>img{
+			display: none;
+			position: absolute;
+			top: 25px;
+			right: 5%;
+			width: 20px;
+			height: 20px;
+		}
+		/*内容*/
+		#content{
+			/*position: relative;*/
+			/*top: 70px;*/
+			width: 980px;
+			height: 510px;
+			margin: 0 auto;
+		}
+		#firstFloor,#secondFloor,#thirdFloor{
+			position: relative;
+			top: 0;
+			width: 100%;
+			height: 169px;
+			border-bottom: 1px solid #ddd;
+		}
+		/*内容区图片*/
+		#content img{
+			position: absolute;
+			left: 0px;
+			width: 590px;
+			height: 169px;
+			transition: all 1s;
+		}
+		#secondFloor img{
+			left: 390px;
+		}
+		/*内容区中间分隔条*/
+		#firstFloor .wall,#secondFloor .wall,#thirdFloor .wall{
+			position: absolute;
+			left: 590px;
+			width: 20px;
+			height: 169px;
+			background: rgb(176,176,176);
+			transition: all 1s;
+		}
+		/*内容栏概述文字*/
+		#content .outline{
+			position: absolute;
+			top: 20px;
+			width: 310px;
+			height: 120px;
+		}
+		#firstFloor .outline,#thirdFloor .outline{
+			left: 630px;
+		}
+		#content h3{
+			font-size: 28px;
+		}
+		#content p{
+			font-size: 14px;
+			font-family: '微软雅黑';
+			padding-top: 7px;
+			line-height: 1.8em;
+		}
+		#secondFloor .wall{
+			left: 370px;
+		}
+		#secondFloor .outline{
+			right: 630px;
+			text-align: right;
+		}
+		/*页脚*/
+		#footer{
+			position: relative;
+			top: 130px;
+			width: 210px;
+			height: 110px;
+			margin: 0 auto;
+		}
+		#footer #envelope{
+			width: 25px;
+			height: 19px;
+			margin: 0 auto;
+		}
+		#footer #envelope img{
+			display: block;
+			width: 100%;
+			height: 19px;
+		}
+		/*页脚合作伙伴logo*/
+		#footer #share{
+			width: 156px;
+			height: 26px;
+			display: block;
+			margin: 16px auto;
+		}
+		#share img{
+			width: 26px;
+			height: 26px;
+			margin: 0 4px;
+		}
+		#footer span{
+			display: block;
+			padding-top: 16px;
+			font-size: 12px;
+			color: gray;
+			text-align: center;
+		}
+		/*响应式样式更改*/
+		@media screen and (min-width: 850px) and (max-width: 1130px){
+			#header{
+				width: 100%;
+			}
+			#header #nav{
+				width: 560px;
+				margin-left: 30%;
+			}
+		}
+		@media screen and (min-width: 626px) and (max-width: 850px){
+			#header{
+				width: 100%;
+			}
+			#header #nav{
+				display: none;
+			}
+			#header>img{
+				display: block;
+			}
+		}
+		@media screen and (max-width: 626px){
+			#header{
+				width: 100%;
+			}
+			#header #nav{
+				display: none;
+			}
+			#header>img{
+				display: block;
+			}
+			#content{
+				width: 95%;
+			}
+			#content img{
+				width: 80%;
+				height: 50%;
+				left: 10%;
+			}
+			#firstFloor,#secondFloor,#thirdFloor{
+				height: 260px;
+				/*overflow: hidden;*/
+			}
+			#secondFloor img{
+				left: 10%;
+			}
+			#firstFloor .wall,#secondFloor .wall,#thirdFloor .wall{
+				display: none;
+			}
+			#content .outline{
+				position: absolute;
+				top: 160px;
+				left: 0;
+				width: 90%;
+				height: 120px;
+			}
+			#secondFloor .outline{
+				left: 0;
+				text-align: left;
+			}
+			#content h3{
+				font-size: 20px;
+				text-align: center;
+			}
+			#content p{
+				font-size: 12px;
+				padding-top: 20px;
+			}
+			#footer{
+				top: 320px;
+			}
+		}
+	</style>
+</head>
+<body>
+	<div id="header_wrap">
+		<div id="header">
+			<div id="logo">
+				<img src="img/shininglogo.png" alt="">
+			</div>
+			<div id="nav">
+				<a href="home.html">Home</a>
+				<a href="about.html">About</a>
+				<a href="rendering.html">Rendering</a>
+				<a href="3D Animation.html">3D Animation</a>
+				<a href="bim.html">Bim</a>
+				<a href="contact.html">Contact</a>
+			</div>
+			<img src="img/nav.png" alt="">
+		</div>
+	</div>
+	<div id="content">
+		<div id="firstFloor" class="onmouse">
+			<img src="img/1.png" alt="">
+			<!-- <img src="img/2.png" style="display: none;"> -->
+			<img src="img/2.png" style="opacity: 0;">
+			<div class="wall"></div>
+			<div class="outline">
+				<h3>RENDERINGS</h3>
+				<p>Masterplan、Public Building、commercial Building、Residential Building、Landscape Design</p>
+			</div>
+		</div>
+		<div id="secondFloor" class="onmouse">
+			<div class="outline">
+				<h3>BIM</h3>
+				<p>Model Completion、Clash Detection、MEP Intergration、Curtain Wall Remedying、BIM Consulting</p>
+			</div>
+			<div class="wall"></div>
+			<img src="img/3.jpg" alt="">
+			<!-- <img src="img/4.png" style="display: none;"> -->
+			<img src="img/4.png" style="opacity: 0;">
+		</div>
+		<div id="thirdFloor" class="onmouse">
+			<img src="img/5.jpg" alt="">
+			<!-- <img src="img/6.jpg" style="display: none;"> -->
+			<img src="img/6.jpg" style="opacity: 0;">
+			<div class="wall"></div>
+			<div class="outline">
+				<h3>3D ANIMATION</h3>
+				<p>Real estate advertising animation Design scheme Animation Corporate promotional Animation</p>
+			</div>
+		</div>
+	</div>
+	<div id="footer">
+		<div id="envelope" class="onmouse">
+			<img src="img/001.jpg" alt="">
+			<img src="img/010.jpg" alt="" style="display: none;">
+		</div>
+		<div id="share" class="onmouse">
+			<a href="http://www.facebook.com">
+				<img src="img/002.jpg" alt="">
+				<img src="img/020.jpg" alt="" style="display: none;">
+			</a>
+			<a href="http://www.youtobe.com">
+				<img src="img/003.jpg" alt="">
+				<img src="img/030.jpg" alt="" style="display: none;">
+			</a>
+			<a href="http://www.linkedln.com">
+				<img src="img/004.jpg" alt="">
+				<img src="img/040.jpg" alt="" style="display: none;">
+			</a>
+			<a href="http://www.twitter.com">
+				<img src="img/005.jpg" alt="">
+				<img src="img/050.jpg" alt="" style="display: none;">
+			</a>
+		</div>
+		<span>Copyright © 1998-2015 shining Group</span>
+	</div>
+</body>
+	<script type="text/javascript" src="js/jquery-3.0.0.min.js"></script>
+	<script>
+		$('#content div[id $= Floor]').mouseover(function(){
+			// $(this).children('img:even').hide();		//隐藏出现，无动画效果
+			// $(this).children('img:odd').show();
+			// $(this).children('.wall').css('background','rgb(206,221,0)');
+			$(this).children('img:even').css('opacity','0');     //有动画效果
+			$(this).children('img:odd').css('opacity','1');
+			$(this).children('.wall').css('background','rgb(206,221,0)');
+		})
+		$('#content div[id $= Floor]').mouseout(function(){
+			// $(this).children('img:even').show();
+			// $(this).children('img:odd').hide();
+			// $(this).children('.wall').css('background','rgb(176,176,176)');
+			$(this).children('img:even').css('opacity','1');
+			$(this).children('img:odd').css('opacity','0');
+			$(this).children('.wall').css('background','rgb(176,176,176)');
+		})
+		$('#footer #envelope').mouseover(function(){
+			$(this).children('img:even').hide().siblings().show();
+		})
+		$('#footer #envelope').mouseout(function(){
+			$(this).children('img:even').show().siblings().hide();
+		})
+		$('#share a').mouseover(function(){
+			$(this).children('img:even').hide().siblings().show();
+		})
+		$('#share a').mouseout(function(){
+			$(this).children('img:even').show().siblings().hide();
+		})
+	</script>
+</html>
